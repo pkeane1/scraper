@@ -27,13 +27,13 @@ mongoose.connect("mongodb://localhost/scraperdb", { useNewUrlParser: true });
 
 
 // Handlebars
-app.engine(
-    "handlebars",
-    exphbs({
-      defaultLayout: "main"
-    })
-  );
-  app.set("view engine", "handlebars");
+// app.engine(
+//     "handlebars",
+//     exphbs({
+//       defaultLayout: "main"
+//     })
+//   );
+//   app.set("view engine", "handlebars");
   
   // Routes
 

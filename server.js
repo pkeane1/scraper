@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var logger = require('morgan');
+var exphbs = require("express-handlebars");
 
 var axios = require("axios");
 var cheerio = require("cheerio");
@@ -23,20 +24,20 @@ app.use(express.json());
 app.use(express.static("public"));
 
 
-mongoose.connect("mongodb://localhost/scraperdb", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/scraperDB", { useNewUrlParser: true });
 
 
 // Handlebars
-// app.engine(
-//     "handlebars",
-//     exphbs({
-//       defaultLayout: "main"
-//     })
-//   );
-//   app.set("view engine", "handlebars");
+app.engine(
+    "handlebars",
+    exphbs({
+      defaultLayout: "main"
+    })
+  );
+  app.set("view engine", "handlebars");
   
   // Routes
-
+  require("./routes/htmlRoutes")(app);
 
   // Start the server
 app.listen(PORT, function() {

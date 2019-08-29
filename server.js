@@ -38,6 +38,7 @@ app.engine(
   
   // Routes
   require("./routes/htmlRoutes")(app);
+  require("./routes/cherrio")(app);
 
   // Start the server
 app.listen(PORT, function() {
